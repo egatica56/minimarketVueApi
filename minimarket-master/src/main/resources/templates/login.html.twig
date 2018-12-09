@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<title>Login</title>
+</head>
+<body>
+	<h2 class="h2" align="center">Bienvenido a Minimarket Milton</h2>
+
+	<div class="container" style="width: 400px!important margin-left: auto!important margin-right: auto!important" align="center">
+		<form action="login" method="post">
+			<div class="form-group">
+				<label for="">Username</label> <input
+					type="text" class="form-control" name="username" id="exampleInputEmail1"
+					aria-describedby="emailHelp" placeholder="Ingrese Usuario">
+			</div>
+			<div class="form-group">
+				<label for="">Password</label> <input
+					type="password" name="password" class="form-control" id="exampleInputPassword1"
+					placeholder="Ingrese Password">
+			</div>
+			<div class="form-group">
+			<input type="submit" class="btn btn-primary" value="Login" />
+		</div>
+			
+		</form>
+		
+		<h3 class="btn btn-error">
+			{{ error }}
+		</h3>
+	</div>
+</body>
+</html>

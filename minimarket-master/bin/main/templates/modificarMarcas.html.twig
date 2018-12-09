@@ -1,0 +1,40 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+<div class="container-fluid" align="center">
+	<h1>Modificar categorias</h1>
+</div>
+
+<div class="container-fluid" align="center">
+	<form action="actualizarMarca" method="post" class="form" align="center">
+		<input type="hidden" name="txtIdMarca" id="txtIdMarca"
+			value="{{ m.getIdMarca()}}" />
+		<table class="table" align="center">
+			<tr>
+				<td><label for="">Nombre</label></td>
+				<td><input type="text" name="txtNombreMar" id="txtNombreMar"
+					value="{{ m.getNombreMarca() }}" class="form-control"/></td>
+			</tr>
+
+			<tr>
+				<td><label for="">Descripcion</label></td>
+				<td><input type="text" name="txtDescripcionMar"
+					id="txtDescripcionMar" value="{{ m.getDescripcionMarca() }}" class="form-control"/></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input class="btn btn-primary" type="submit"
+					value="Modificar" /></td>
+			</tr>
+		</table>
+	</form>
+</div>
+{{ mensaje }}
+
+
+{% endblock contenido %}
+

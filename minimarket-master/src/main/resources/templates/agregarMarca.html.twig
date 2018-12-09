@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+<div align="center" class="container-fluid">
+<h1>Agregar Marca</h1>
+
+
+<form action="almacenarMarca" method="post" align="center" class="form">
+
+	<table class="table" align="center">
+		
+		<tr>
+			<td><label for="">Nombre Marca</label></td>
+			<td><input type="text" name="txtNombreMar" id="txtNombreMar" required="" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td><label for="">Descripcion</label></td>
+			<td><input type="text" name="txtDescMarca" id="txtDescMarca" required="" class="form-control"/></td>
+
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-primary" value="Guardar" /></td>
+		</tr>
+	</table>
+
+
+</form>
+{{ mensaje }}
+</div>
+{% endblock contenido %}
+

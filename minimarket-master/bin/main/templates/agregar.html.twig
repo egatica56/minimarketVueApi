@@ -1,0 +1,77 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+
+<div class="container" align="center">
+<h1>Agregar Producto</h1>
+<form action="almacenar" method="post" class="form" align="center">
+
+	<table class="table">
+		<tr>
+			<td>SKU</td>
+			<td><input type="number" name="txtSKU" id="txtSKU" min=0 required="" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td><label for="">Nombre</label></td>
+			<td><input type="text" name="txtNombre" id="txtNombre" required="" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td><label for="">Precio</label></td>
+			<td><input type="number" name="txtPrecio" id="txtPrecio" min=0 required="" class="form-control"/></td>
+
+		</tr>
+		<tr>
+			<td><label for="">Stock</label></td>
+			<td><input type="number" name="txtStock" id="txtStock" min=0 required="" class="form-control"/></td>
+
+		</tr>
+				
+
+		<tr>
+			<td><label for="">Categoria</label></td>
+			<td><select class="form-control" name="cboCategoria" id="cboCategoria">
+					<option value="">Seleccionar</option>
+
+					{% for c in categorias %}
+
+					<option value="{{ c.getIdCategoria() }}">{{ c.getNombreCategoria() }}</option>
+
+					{% endfor %}
+
+			</select></td>
+		</tr>
+
+		<tr>
+			<td><label for="">Marca</label></td>
+			<td><select class="form-control" name="cboMarca" id="cboMarca">
+					<option value="">seleccionar</option>
+
+					{% for m in marcas %}
+					<option value="{{ m.getIdMarca() }}">{{ m.getNombreMarca() }}</option>
+					{% endfor %}
+
+			</select></td>
+		</tr>
+		<tr>
+			<td><label for="">Descripcion</label></td>
+			<td><input type="text" name="txtDescripcion" id="txtDescripcion" required="" class="form-control"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input class="btn btn-primary" type="submit" value="Guardar" /></td>
+		</tr>
+	</table>
+
+
+</form>
+<h1 align="center">{{ mensaje }}</h1>
+</div>
+
+
+{% endblock contenido %}
+

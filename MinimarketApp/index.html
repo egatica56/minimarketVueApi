@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/> 
+    <title>Minimarket Milton</title>
+</head>
+
+<body>
+
+    <div id="app" align="center">
+        <h1>Bienvenido a Minimarket Milton</h1>
+        <br>
+        <br>
+        <!--prueba></prueba-->
+        <div class="container" align="center">
+                <b-navbar toggleable="md" type="light" variant="primary">
+                        <b-collapse is-nav id="nav_collapse">
+                            
+                            <b-navbar-nav class="">
+
+                                <b-nav-item-dropdown  text="Marcas"  right>
+                                    <b-dropdown-item><router-link to="/agregar">Agregar Marcas</router-link>   </b-dropdown-item>
+                                    <b-dropdown-item><router-link to="/listar">Listar Marcas</router-link></b-dropdown-item>
+                                    <b-dropdown-item><router-link to="/modificar">Modificar Marcas</router-link>   </b-dropdown-item>
+                                </b-nav-item-dropdown>
+                
+
+                    
+                        
+                                <b-nav-item-dropdown  text="Usuarios" right>
+                                    <b-dropdown-item><router-link to="/agregarUsuario">Agregar Usuarios</router-link>   </b-dropdown-item>
+                                    <b-dropdown-item><router-link to="/listarUsuario">Listar Usuarios</router-link></b-dropdown-item>
+                                    <b-dropdown-item><router-link to="/modificarUsuario">Modificar Usuarios</router-link> </router-link>   </b-dropdown-item>
+                                </b-nav-item-dropdown>
+                                  
+                                <b-nav-item-dropdown  text="Productos" right>
+                                    <b-dropdown-item><router-link to="/agregarProducto">Agregar Productos</router-link>   </b-dropdown-item>
+                                    <b-dropdown-item><router-link to="/listarProducto">Listar Productos</router-link></b-dropdown-item>
+                                    <b-dropdown-item><router-link to="/modificarProducto">Modificar Productos</router-link> </router-link>   </b-dropdown-item>
+                                </b-nav-item-dropdown>
+
+                                </b-navbar-nav>
+                        </b-collapse>  
+                </b-navbar>
+        </div>   
+         <br>
+        <div>
+
+            <!--esta es la parte que se cargará dinamicamente-->
+            <router-view> </router-view>
+        </div>
+
+        <!--agregar-animal></agregar-animal-->
+        
+        
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Un enrutador de paginas SPA-->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="servicios/config.js"></script>
+    <script src="servicios/CategoriaService.js"></script>
+    <script src="servicios/MarcaService.js"></script>
+    <script src="servicios/UsuarioService.js"></script>
+    <script src="servicios/ProductoService.js"></script>
+    <script src="componentes/marca.js"></script>
+    <script src="componentes/usuario.js"></script>
+    <script src="componentes/producto.js"></script>
+    <script src="componentes/agregarMarca.js"></script>
+    <script src="componentes/agregarProducto.js"></script>
+    <script src="componentes/agregarUsuario.js"></script>
+    <script src="componentes/modificarMarca.js"></script>
+    <script src="componentes/modificarProducto.js"></script>
+    <script src="componentes/modificarUsuario.js"></script>
+    
+   
+
+    <script src="main.js"></script>
+</body>
+
+</html>

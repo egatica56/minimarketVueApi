@@ -1,0 +1,52 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block titulo %} Listado Productos {% endblock titulo %}
+
+{% block contenido %}
+<div class="container-fluid" align="center">
+	<h1 align="center">Listado de Productos</h1>
+	
+	<table class="table" align="center">
+		<tr>
+		
+			<th>SKU</th>
+			<th>Nombre</th>
+			<th>Precio</th>
+			<th>Stock</th>
+			<th>Categoria</th>
+			<th>Marca</th>
+			<th>Descripcion</th>
+			<th>Opciones</th>
+			
+		</tr>
+		
+		{% for p in productos %}
+		
+		<tr>
+		
+			<td>{{ p.getSku () }}</td>
+			<td>{{ p.getNombreProduto()}}</td>
+			<td>{{ p.getPrecioProducto}}</td>
+			<td>{{ p.getStockProducto}}</td>
+			<td>{{ p.getCategoria().getNombreCategoria() }}</td>
+			<td>{{ p.getMarca().getNombreMarca() }}</td>
+			<td>{{ p.getDescripcionProduto() }}</td>
+			<td>
+			
+				<a class="btn btn-primary" href="eliminar?id={{ p.getSku() }}">Eliminar</a>
+				<a class="btn btn-primary" href="modificar?id={{ p.getSku() }}">Modificar</a>
+			</td>
+		</tr>
+		
+		{% endfor %}
+	
+		
+		
+	
+	
+	</table>
+	<h4>{{ mensaje }}</h4>
+</div>	
+	{% endblock contenido %}

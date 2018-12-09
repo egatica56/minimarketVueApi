@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+<div class="container-fluid" align="center">
+<h1>Agregar Categorias</h1>
+
+
+<form action="almacenarCategoria" method="post" class="form">
+
+	<table class="table" align="center">
+		
+		<tr>
+			<td><label for="">Nombre</label></td>
+			<td><input type="text" name="txtNombreCat" id="txtNombreCat" required="" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td><label for="">Descripcion</label></td>
+			<td><input type="text" name="txtDescCategoria" id="txtDescCategoria" required="" class="form-control"/></td>
+
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input  class="btn btn-primary" type="submit" value="Guardar" /></td>
+		</tr>
+	</table>
+
+
+</form>
+{{ mensaje }}
+</div>
+{% endblock contenido %}
+

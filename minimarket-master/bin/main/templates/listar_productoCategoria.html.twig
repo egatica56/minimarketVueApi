@@ -1,0 +1,71 @@
+
+{% extends 'base.html.twig' %}
+
+{% block titulo %}
+Listado Productos
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container" align="center">
+<h1>Listado de Productos Por Categoria</h1>
+</div>
+<form action="listarProductoCategoria" method="post" class="form" align="center">
+	<div class="container-fluid">
+		<table class="table" align="center">
+			<tr>
+				<td><label for="">Categoria</label></td>
+				<td><select class="form-control" name="cboCategoria" id="cboCategoria">
+						<option value="">Seleccionar</option>
+
+						{% for c in categorias %}
+
+						<option value="{{ c.getIdCategoria() }}">{{ c.getNombreCategoria() }}</option>
+
+						{% endfor %}
+
+				</select></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Consultar" class="btn btn-primary" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="container-fluid" align="center">
+		<table class="table" align="center">
+			<tr>
+				<th>SKU</th>
+				<th>Nombre</th>
+				<th>Precio</th>
+				<th>Stock</th>
+				<th>Categoria</th>
+				<th>Marca</th>
+				<th>Descripcion</th>		
+			</tr>
+
+			{% for p in productos %}
+
+			<tr>
+
+				<td>{{ p.getSku () }}</td>
+				<td>{{ p.getNombreProduto()}}</td>
+				<td>{{ p.getPrecioProducto}}</td>
+				<td>{{ p.getStockProducto}}</td>
+				<td>{{ p.getCategoria().getNombreCategoria() }}</td>
+				<td>{{ p.getMarca().getNombreMarca() }}</td>
+				<td>{{ p.getDescripcionProduto() }}</td>
+				<td></td>
+			</tr>
+
+			{% endfor %}
+
+		</table>
+	</div>
+	<h4 align="center">
+		{{ mensaje }}
+	</h4>
+</form>
+
+{% endblock contenido %}

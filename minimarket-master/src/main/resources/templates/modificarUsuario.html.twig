@@ -1,0 +1,59 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+<div align="center" class="container">
+<h1>Agregar Usuario</h1>
+
+
+<form action="actualizarUsuario" method="post" align="center" class="form">
+
+	<table align="center" class="table">
+		<td><input type="hidden" name="txtIdUsuario"  value="{{ u.getIdUsuario() }}"/></td>
+		<tr>
+			<td><label for="">Username</label></td>
+			<td><input type="text" name="txtUsername" value="{{ u.getUsername() }}" id="txtUsername" required="" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td><label for="">Password</label></td>
+			<td><input type="password" name="txtPassword" value="{{ u.getPassword() }}" id="txtPassword" required="" class="form-control"/></td>
+
+		</tr>
+		<tr>
+			<td><label for="">email</label></td>
+			<td><input type="email" name="txtEmail" id="txtEmail" value="{{ u.getEmail() }}"  required="" class="form-control"/></td>
+
+		</tr>
+				
+		<tr>
+			<td><label for="">nombres</label></td>
+			<td><input type="text" name="txtNombre" id="txtNombre"  value="{{ u.getNombres() }}" required="" class="form-control"/></td>
+		</tr>
+		
+		<tr>
+			<td><label for="">apellidos</label></td>
+			<td><input type="text" name="txtApellido" id="txtApellido" value="{{ u.getApellidos() }}" required="" class="form-control"/></td>
+
+		</tr>
+		
+		<tr>
+			<td><label for="">direccion</label></td>
+			<td><input type="text" name="txtDireccion" id="txtDireccion" value="{{u.getDireccion()}}"  required="" class="form-control"/></td>
+
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input class="btn btn-primary" type="submit" value="Modificar" /></td>
+		</tr>
+	</table>
+
+
+</form>
+
+{{ mensaje }}
+</div>
+{% endblock contenido %}
+

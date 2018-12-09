@@ -1,0 +1,59 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+<div align="center" class="container">
+<h1>Agregar Usuario</h1>
+
+
+<form action="almacenarUsuario" method="post" align="center" class="form">
+
+	<table align="center" class="table">
+		
+		<tr>
+			<td><label for="">Username</label></td>
+			<td><input type="text" name="txtUsername" id="txtUsername" required="" class="form-control" /></td>
+		</tr>
+		<tr>
+			<td><label for="">Password</label></td>
+			<td><input type="password" name="txtPassword" id="txtPassword" required="" class="form-control"/></td>
+
+		</tr>
+		<tr>
+			<td><label for="">email</label></td>
+			<td><input type="email" name="txtEmail" id="txtEmail"  required="" class="form-control"/></td>
+
+		</tr>
+				
+		<tr>
+			<td><label for="">nombres</label></td>
+			<td><input type="text" name="txtNombre" id="txtNombre"  required="" class="form-control"/></td>
+		</tr>
+		
+		<tr>
+			<td><label for="">apellidos</label></td>
+			<td><input type="text" name="txtApellido" id="txtApellido"  required="" class="form-control"/></td>
+
+		</tr>
+		
+		<tr>
+			<td><label for="">direccion</label></td>
+			<td><input type="text" name="txtDireccion" id="txtDireccion"  required="" class="form-control"/></td>
+
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input class="btn btn-primary" type="submit" value="Guardar" /></td>
+		</tr>
+	</table>
+
+
+</form>
+
+{{ mensaje }}
+</div>
+{% endblock contenido %}
+
